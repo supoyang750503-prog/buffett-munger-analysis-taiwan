@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 const { generateEvaluation } = require('@/lib/evaluation');
 
+export const maxDuration = 60; // Vercel Hobby 方案預設10秒逾時，這裡明確拉長到60秒
+
 export async function POST(request, { params }) {
   try {
     const { stockId } = await params;

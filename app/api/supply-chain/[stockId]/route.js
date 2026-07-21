@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 const { getSupplyChain } = require('@/lib/supplyChain');
 
+export const maxDuration = 60; // Vercel Hobby 方案預設10秒逾時，這裡明確拉長到60秒
+
 export async function GET(request, { params }) {
   try {
     const { stockId } = await params;
