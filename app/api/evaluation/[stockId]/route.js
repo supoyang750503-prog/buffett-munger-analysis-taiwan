@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 const { generateEvaluation } = require('@/lib/evaluation');
 
-export const maxDuration = 60; // Vercel Hobby 方案預設10秒逾時，這裡明確拉長到60秒
+export const maxDuration = 300; // Vercel Hobby 方案(Fluid Compute)最高可設300秒，評價生成含多次外部API呼叫，拉長時間上限避免逾時
 
 export async function POST(request, { params }) {
   try {
